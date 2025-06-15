@@ -30,48 +30,49 @@ setupQuiz();
 //$があることで、HTMLのオブジェクトが入っていると理解できる
 
 //ボタンを押したら正誤判定できる
-$button[0].addEventListener('click', () => {
-    if (correctAnswer === $button[0].textContent) {
+$button[0].addEventListener('click', (e) => {
+    // console.log(e);
+    if (correctAnswer === e.target.textContent) {
     window.alert('正解!');
     } else {
     window.alert('不正解！');
     }
 });
 
-$button[1].addEventListener('click', ()=> {
-    if(correctAnswer === $button[1].textContent){
+$button[1].addEventListener('click', (e)=> {
+    if(correctAnswer === e.target.textContent){
         window.alert('正解!');
     } else {
         window.alert('不正解！');
     }
 })
 
-$button[2].addEventListener('click', ()=> {
-    if(correctAnswer === $button[2].textContent){
+$button[2].addEventListener('click', (e)=> {
+    if(correctAnswer === e.target.textContent){
         window.alert('正解!');
     } else {
         window.alert('不正解！');
     }
 })
 
-$button[3].addEventListener('click', ()=> {
-    if(correctAnswer === $button[3].textContent){
+$button[3].addEventListener('click', (e)=> {
+    if(correctAnswer === e.target.textContent){
         window.alert('正解!');
     } else {
         window.alert('不正解！');
     }
 })
 
-$button[4].addEventListener('click', ()=> {
-    if(correctAnswer === $button[4].textContent){
+$button[4].addEventListener('click', (e)=> {
+    if(correctAnswer === e.target.textContent){
         window.alert('正解!');
     } else {
         window.alert('不正解！');
     }
 })
 
-$button[5].addEventListener('click', ()=> {
-    if(correctAnswer === $button[5].textContent){
+$button[5].addEventListener('click', (e)=> {
+    if(correctAnswer === e.target.textContent){
         window.alert('正解!');
     } else {
         window.alert('不正解！');
