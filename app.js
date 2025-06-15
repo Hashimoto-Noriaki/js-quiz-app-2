@@ -10,13 +10,14 @@ const answer = [
 ]
 
 const correctAnswer = 'ゴムゴムの実'
+
 const $button = document.getElementsByTagName('button');
+const buttonLength = $button.length;
 
 //定数の文字列をHTMLに反映　
 const setupQuiz = () => {
     document.getElementById('js-question').textContent = quiz;
     let buttonIndex = 0;
-    let buttonLength = $button.length
     while(buttonIndex < buttonLength){
     //ここに命令
         $button[buttonIndex].textContent = answer[buttonIndex];
@@ -36,7 +37,6 @@ const clickHandler = (e)=> {
 
 //ボタンを押したら正誤判定できる
 let handlerIndex = 0;
-const buttonLength = $button.length;
 while(handlerIndex < buttonLength){
     $button[handlerIndex].addEventListener('click', (e) => {
         clickHandler(e);
