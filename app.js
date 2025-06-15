@@ -26,7 +26,6 @@ const setupQuiz = () => {
 
 setupQuiz();
 
-//ボタンを押したら正誤判定できる
 const clickHandler = (e)=> {
     if (correctAnswer === e.target.textContent) {
         window.alert('正解!');
@@ -35,26 +34,12 @@ const clickHandler = (e)=> {
     }
 }
 
-$button[0].addEventListener('click', (e) => {
-    clickHandler(e);
-});
-
-$button[1].addEventListener('click', (e)=> {
-    clickHandler(e);
-})
-
-$button[2].addEventListener('click', (e)=> {
-    clickHandler(e);
-})
-
-$button[3].addEventListener('click', (e)=> {
-    clickHandler(e);
-})
-
-$button[4].addEventListener('click', (e)=> {
-    clickHandler(e);
-})
-
-$button[5].addEventListener('click', (e)=> {
-    clickHandler(e);
-})
+//ボタンを押したら正誤判定できる
+let handlerIndex = 0;
+const buttonLength = $button.length;
+while(handlerIndex < buttonLength){
+    $button[handlerIndex].addEventListener('click', (e) => {
+        clickHandler(e);
+    });
+    handlerIndex++;
+}
