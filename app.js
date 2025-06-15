@@ -34,3 +34,43 @@ $button[0].addEventListener('click', () => {
     window.alert('不正解！');
     }
 });
+
+$button[1].addEventListener('click', ()=> {
+    if(correctAnswer === $button[1].textContent){
+        window.alert('正解!');
+    } else {
+        window.alert('不正解！');
+    }
+})
+
+$button[2].addEventListener('click', ()=> {
+    if(correctAnswer === $button[2].textContent){
+        window.alert('正解!');
+    } else {
+        window.alert('不正解！');
+    }
+})
+
+$button[3].addEventListener('click', ()=> {
+    if(correctAnswer === $button[3].textContent){
+        window.alert('正解!');
+    } else {
+        window.alert('不正解！');
+    }
+})
+
+$button[4].addEventLisener('click', ()=> {
+    if(correctAnswer === $button[4].textContent){
+        window.alert('正解!');
+    } else {
+        window.alert('不正解！');
+    }
+})
+
+$button[5].addEventListener('click', ()=> {
+    if(correctAnswer === $button[5].textContent){
+        window.alert('正解!');
+    } else {
+        window.alert('不正解！');
+    }
+})
