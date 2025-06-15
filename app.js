@@ -59,7 +59,7 @@ $button[3].addEventListener('click', ()=> {
     }
 })
 
-$button[4].addEventLisener('click', ()=> {
+$button[4].addEventListener('click', ()=> {
     if(correctAnswer === $button[4].textContent){
         window.alert('正解!');
     } else {
