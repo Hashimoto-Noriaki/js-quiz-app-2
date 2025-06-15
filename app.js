@@ -16,12 +16,14 @@ document.getElementById('js-question').textContent = quiz;
 
 const $button = document.getElementsByTagName('button');
 
-$button[0].textContent = answer[0];
-$button[1].textContent = answer[1];
-$button[2].textContent = answer[2];
-$button[3].textContent = answer[3];
-$button[4].textContent = answer[4];
-$button[5].textContent = answer[5];
+let buttonIndex = 0;
+let buttonLength = $button.length
+while(buttonIndex < buttonLength){
+    //ここに命令
+    $button[buttonIndex].textContent = answer[buttonIndex];
+    buttonIndex++;
+}
+
 
 //同じような処理が続いたので、変数、定数にまとめる
 //$があることで、HTMLのオブジェクトが入っていると理解できる
