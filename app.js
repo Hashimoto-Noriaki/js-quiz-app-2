@@ -11,66 +11,35 @@ const answer = [
 
 const correctAnswer = 'ゴムゴムの実'
 
-//定数の文字列をHTMLに反映　
-document.getElementById('js-question').textContent = quiz;
-
 const $button = document.getElementsByTagName('button');
+const buttonLength = $button.length;
 
-$button[0].textContent = answer[0];
-$button[1].textContent = answer[1];
-$button[2].textContent = answer[2];
-$button[3].textContent = answer[3];
-$button[4].textContent = answer[4];
-$button[5].textContent = answer[5];
+//定数の文字列をHTMLに反映　
+const setupQuiz = () => {
+    document.getElementById('js-question').textContent = quiz;
+    let buttonIndex = 0;
+    while(buttonIndex < buttonLength){
+    //ここに命令
+        $button[buttonIndex].textContent = answer[buttonIndex];
+        buttonIndex++;
+    }
+}
 
-//同じような処理が続いたので、変数、定数にまとめる
-//$があることで、HTMLのオブジェクトが入っていると理解できる
+setupQuiz();
+
+const clickHandler = (e)=> {
+    if (correctAnswer === e.target.textContent) {
+        window.alert('正解!');
+    } else {
+        window.alert('不正解！');
+    }
+}
 
 //ボタンを押したら正誤判定できる
-$button[0].addEventListener('click', () => {
-    if (correctAnswer === $button[0].textContent) {
-    window.alert('正解!');
-    } else {
-    window.alert('不正解！');
-    }
-});
-
-$button[1].addEventListener('click', ()=> {
-    if(correctAnswer === $button[1].textContent){
-        window.alert('正解!');
-    } else {
-        window.alert('不正解！');
-    }
-})
-
-$button[2].addEventListener('click', ()=> {
-    if(correctAnswer === $button[2].textContent){
-        window.alert('正解!');
-    } else {
-        window.alert('不正解！');
-    }
-})
-
-$button[3].addEventListener('click', ()=> {
-    if(correctAnswer === $button[3].textContent){
-        window.alert('正解!');
-    } else {
-        window.alert('不正解！');
-    }
-})
-
-$button[4].addEventListener('click', ()=> {
-    if(correctAnswer === $button[4].textContent){
-        window.alert('正解!');
-    } else {
-        window.alert('不正解！');
-    }
-})
-
-$button[5].addEventListener('click', ()=> {
-    if(correctAnswer === $button[5].textContent){
-        window.alert('正解!');
-    } else {
-        window.alert('不正解！');
-    }
-})
+let handlerIndex = 0;
+while(handlerIndex < buttonLength){
+    $button[handlerIndex].addEventListener('click', (e) => {
+        clickHandler(e);
+    });
+    handlerIndex++;
+}
