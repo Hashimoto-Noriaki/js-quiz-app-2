@@ -10,20 +10,21 @@ const answer = [
 ]
 
 const correctAnswer = 'ゴムゴムの実'
-
-//定数の文字列をHTMLに反映　
-document.getElementById('js-question').textContent = quiz;
-
 const $button = document.getElementsByTagName('button');
 
-let buttonIndex = 0;
-let buttonLength = $button.length
-while(buttonIndex < buttonLength){
+//定数の文字列をHTMLに反映　
+const setupQuiz = () => {
+    document.getElementById('js-question').textContent = quiz;
+    let buttonIndex = 0;
+    let buttonLength = $button.length
+    while(buttonIndex < buttonLength){
     //ここに命令
-    $button[buttonIndex].textContent = answer[buttonIndex];
-    buttonIndex++;
+        $button[buttonIndex].textContent = answer[buttonIndex];
+        buttonIndex++;
+    }
 }
 
+setupQuiz();
 
 //同じような処理が続いたので、変数、定数にまとめる
 //$があることで、HTMLのオブジェクトが入っていると理解できる
