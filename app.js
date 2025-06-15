@@ -26,55 +26,35 @@ const setupQuiz = () => {
 
 setupQuiz();
 
-//同じような処理が続いたので、変数、定数にまとめる
-//$があることで、HTMLのオブジェクトが入っていると理解できる
-
 //ボタンを押したら正誤判定できる
-$button[0].addEventListener('click', (e) => {
-    // console.log(e);
+const clickHandler = (e)=> {
     if (correctAnswer === e.target.textContent) {
-    window.alert('正解!');
+        window.alert('正解!');
     } else {
-    window.alert('不正解！');
+        window.alert('不正解！');
     }
+}
+
+$button[0].addEventListener('click', (e) => {
+    clickHandler(e);
 });
 
 $button[1].addEventListener('click', (e)=> {
-    if(correctAnswer === e.target.textContent){
-        window.alert('正解!');
-    } else {
-        window.alert('不正解！');
-    }
+    clickHandler(e);
 })
 
 $button[2].addEventListener('click', (e)=> {
-    if(correctAnswer === e.target.textContent){
-        window.alert('正解!');
-    } else {
-        window.alert('不正解！');
-    }
+    clickHandler(e);
 })
 
 $button[3].addEventListener('click', (e)=> {
-    if(correctAnswer === e.target.textContent){
-        window.alert('正解!');
-    } else {
-        window.alert('不正解！');
-    }
+    clickHandler(e);
 })
 
 $button[4].addEventListener('click', (e)=> {
-    if(correctAnswer === e.target.textContent){
-        window.alert('正解!');
-    } else {
-        window.alert('不正解！');
-    }
+    clickHandler(e);
 })
 
 $button[5].addEventListener('click', (e)=> {
-    if(correctAnswer === e.target.textContent){
-        window.alert('正解!');
-    } else {
-        window.alert('不正解！');
-    }
+    clickHandler(e);
 })
