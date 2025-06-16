@@ -1,4 +1,7 @@
-const quiz = 'ルフィの悪魔は？'
+
+
+
+const question = 'ルフィの悪魔は？'
 
 const answer = [
     'ゴムゴムの実',
@@ -16,7 +19,7 @@ const buttonLength = $button.length;
 
 //定数の文字列をHTMLに反映　
 const setupQuiz = () => {
-    document.getElementById('js-question').textContent = quiz;
+    document.getElementById('js-question').textContent = question;
     let buttonIndex = 0;
     while(buttonIndex < buttonLength){
     //ここに命令
