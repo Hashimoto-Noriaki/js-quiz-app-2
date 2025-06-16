@@ -7,36 +7,37 @@ const answer = [
 ]
 
 const correctAnswer = 'ゴムゴムの実'
-
-document.getElementById('js-question').textContent = quiz;
-
 const $button = document.getElementsByTagName('button');
 
-$button[0].textContent = answer[0];
-$button[1].textContent = answer[1];
-$button[2].textContent = answer[2];
+const setupQuiz = ()=> {
+    document.getElementById('js-question').textContent = quiz;
+    let buttonIndex = 0;
+    let buttonLength = $button.length
+    while(buttonIndex < buttonLength){
+        $button[buttonIndex].textContent = answer[buttonIndex];
+            buttonIndex++;
+    }
+}
+
+setupQuiz();
+
+const clickHandler = (e)=> {
+    if(correctAnswer === e.target.textContent){
+        alert("正解!")
+    } else {
+        alert("不正解!")
+    }
+}
 
 //正誤判定
-$button[0].addEventListener('click',()=> {
-    if(correctAnswer === document.getElementsByTagName('button')[0].textContent){
-        alert("正解!")
-    } else {
-        alert("不正解!")
-    }
+$button[0].addEventListener('click',(e)=> {
+    clickHandler(e);
 })
 
-$button[1].addEventListener('click',()=> {
-    if(correctAnswer === document.getElementsByTagName('button')[1].textContent){
-        alert("正解!")
-    } else {
-        alert("不正解!")
-    }
+$button[1].addEventListener('click',(e)=> {
+    clickHandler(e);
 })
 
-$button[2].addEventListener('click',()=> {
-    if(correctAnswer === document.getElementsByTagName('button')[2].textContent){
-        alert("正解!")
-    } else {
-        alert("不正解!")
-    }
+$button[2].addEventListener('click',(e)=> {
+    clickHandler(e);
 })
