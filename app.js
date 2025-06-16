@@ -1,20 +1,20 @@
-const quiz = 'ルフィの悪魔の実は?'
+const question = 'ルフィの悪魔の実は?'
 
-const answer = [
+const answers = [
     'ゴムゴムの実',
     'ピカピカの実',
     'バラバラの実',
 ]
 
-const correctAnswer = 'ゴムゴムの実'
+const correct = 'ゴムゴムの実'
 const $button = document.getElementsByTagName('button');
 
 const setupQuiz = ()=> {
-    document.getElementById('js-question').textContent = quiz;
+    document.getElementById('js-question').textContent = question;
     let buttonIndex = 0;
     let buttonLength = $button.length
     while(buttonIndex < buttonLength){
-        $button[buttonIndex].textContent = answer[buttonIndex];
+        $button[buttonIndex].textContent = answers[buttonIndex];
             buttonIndex++;
     }
 }
@@ -22,7 +22,7 @@ const setupQuiz = ()=> {
 setupQuiz();
 
 const clickHandler = (e)=> {
-    if(correctAnswer === e.target.textContent){
+    if(correct === e.target.textContent){
         alert("正解!")
     } else {
         alert("不正解!")
