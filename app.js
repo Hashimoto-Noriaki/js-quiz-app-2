@@ -22,26 +22,22 @@ const setupQuiz = () => {
 
 setupQuiz();
 
-$button[0].addEventListener('click',(e)=> {
+const clickHandler = (e) => {
     if(correct === e.target.textContent){
         alert('正解');
     } else {
         alert('不正解');
     }
+}
+
+$button[0].addEventListener('click',(e)=> {
+    clickHandler(e);
 })
 
 $button[1].addEventListener('click',(e)=> {
-    if(correct === e.target.textContent){
-        alert('正解');
-    } else {
-        alert('不正解');
-    }
+    clickHandler(e);
 })
 
 $button[2].addEventListener('click',(e)=> {
-    if(correct === e.target.textContent){
-        alert('正解');
-    } else {
-        alert('不正解');
-    }
+    clickHandler(e);
 })
