@@ -8,7 +8,36 @@ const answers = [
 
 const correct = 'ルフィ';
 
-document.getElementById('js-question').textContent = question;
-document.getElementsByTagName('button')[0].textContent = answers[0];
-document.getElementsByTagName('button')[1].textContent = answers[1];
-document.getElementsByTagName('button')[2].textContent = answers[2];
+const $button = document.getElementsByTagName('button')
+
+const setupQuiz = () => {
+    document.getElementById('js-question').textContent = question;
+    let buttonLength = $button.length
+    let buttonIndex = 0;
+    while(buttonIndex < buttonLength){
+        $button[buttonIndex].textContent = answers[buttonIndex];
+        buttonIndex++;
+    }
+}
+
+setupQuiz();
+
+const clickHandler = (e)=> {
+    if(correct === e.target.textContent){
+        alert('正解！');
+    } else {
+        alert('不正解！');
+    }
+}
+
+$button[0].addEventListener('click', (e)=> {
+    clickHandler(e);
+})
+
+$button[1].addEventListener('click', (e)=> {
+    clickHandler(e);
+})
+
+$button[2].addEventListener('click', (e)=> {
+    clickHandler(e);
+})
