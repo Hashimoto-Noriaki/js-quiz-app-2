@@ -9,10 +9,10 @@ const answers = [
 const correct = 'ルフィ';
 
 const $button = document.getElementsByTagName('button')
+let buttonLength = $button.length
 
 const setupQuiz = () => {
     document.getElementById('js-question').textContent = question;
-    let buttonLength = $button.length
     let buttonIndex = 0;
     while(buttonIndex < buttonLength){
         $button[buttonIndex].textContent = answers[buttonIndex];
@@ -30,14 +30,11 @@ const clickHandler = (e)=> {
     }
 }
 
-$button[0].addEventListener('click', (e)=> {
-    clickHandler(e);
-})
+let handleIndex = 0;
 
-$button[1].addEventListener('click', (e)=> {
-    clickHandler(e);
-})
-
-$button[2].addEventListener('click', (e)=> {
-    clickHandler(e);
-})
+while(handleIndex < buttonLength){
+    $button[handleIndex].addEventListener('click', (e)=> {
+        clickHandler(e);
+    })
+    handleIndex++;
+}
