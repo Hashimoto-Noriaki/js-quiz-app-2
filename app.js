@@ -1,21 +1,43 @@
-const question = 'ワンピースの主人公は？';
+const quiz = [
+    {
+        question: 'ワンピースの主人公の名前は？',
+        answers: [
+            'ルフィ',
+            'ゾロ',
+            'ナミ',
+        ],
+        correct: 'ルフィ'
+    },{
+        question:'ワンピースの作者は?',
+        answers: [
+            '尾田栄一郎',
+            '鳥山明',
+            '岸本斉史',
+        ],
+        correct: '尾田栄一郎'
+    },{
+        question: 'ワンピースの連載が始まった年は？',
+        answers: [
+            '1997年',
+            '1999年',
+            '2001年',
+        ],
+        correct: '1997年'
+    }
+]
 
-const answers = [
-    'モンキー・D・ルフィ',
-    'ナミ',
-    'ロロノア・ゾロ',
-];
-
-const correct = 'モンキー・D・ルフィ';
+let quizLength = quiz.length;
+let quizIndex = 0;
+let score = 0;
 
 const $button = document.getElementsByTagName('button');
 let buttonLength = $button.length;
 
 const setupQuiz = () => {
-    document.getElementById('js-question').textContent = question;
+    document.getElementById('js-question').textContent = quiz[quizIndex].question;
     let buttonIndex = 0;
     while(buttonIndex < buttonLength){
-        $button[buttonIndex].textContent = answers[buttonIndex];
+        $button[buttonIndex].textContent = quiz[quizIndex].answers[buttonIndex];
         buttonIndex++;
     }
 }
@@ -23,10 +45,20 @@ const setupQuiz = () => {
 setupQuiz();
 
 const clickHandler = (e) => {
-    if(correct === e.target.textContent){
+    if(quiz[quizIndex].correct === e.target.textContent){
         alert('正解');
     } else {
         alert('不正解');
+    }
+
+    quizIndex++;
+
+    if(quizIndex < quizLength){
+        setupQuiz();
+    } else {
+        alert('クイズ終了！');
+        quizIndex = 0;
+        setupQuiz();
     }
 }
 
